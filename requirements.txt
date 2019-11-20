@@ -6,4 +6,4 @@ seaborn==0.9.0
 holidays==0.9.11
 flask==1.1.1
 werkzeug==0.15.4
-gunicorn==41.0.1
+gunicorn==20.0.0
