@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";  
+  display: table;
+  clear: both;
+}
+
+.scrollable{
+    overflow-y: scroll;
+    height: 150px;
+    
+}
+.scrollablexy{
+    overflow-y: scroll;
+    overflow-x: scroll;
+    height: 250px;
+}
+.container{
+    height: 40px;
+}
+
+
+.item3{
+  display: hide;
+}
+.item4{
+  display: hide;
+}
+
+
+input[type=checkbox]:checked + label {
+  color: black;
+  font-style: inherit;;
+} 
+div + input[type=checkbox]:checked {
+  background: steelblue;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: white;
+}
+
+.carousel-control-next-icon:after
+{
+  color: gray;
+}
+
+.carousel-control-prev-icon:after {
+  
+  color: gray;
+}
+
+
+#loading {
+  
+  display: none;
+  border: 30px solid #f3f3f3; /* Light grey */
+  border-top: 30px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  animation: spin 2s linear infinite;
+  margin: auto auto;
+  margin-top: 10%;
+    }
+
+    @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+</style>
+<body>
+    <div id="loading"></div>
+    <div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><img src="https://i.pinimg.com/474x/80/74/17/8074177f317194ce8a6ad2ef4002342b.jpg" width="100px" height="50px"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+              <li class="nav-item active">
+                  <a class="nav-link" href="/history"><span class="sr-only">(current)</span> History </a>
+                </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/demo">Demo </a>
+            </li>
+          </ul>
+          <a class="navbar-brand" href="/" style="margin-left: auto;"><img src="https://www.nagarro.com/hubfs/Nagarro-March2018-Theme/Images/nagarro-logo-2018-3.svg" height="50px"></a>
+        
+        </div>
+      </nav>
+
+
+    <div style="width: 100%;height: 20%;">
+    <div class="jumbotron" style="background-repeat: no-repeat;
+    background-size:cover;height: 270px;background-image: url(https://www.xmple.com/wallpaper/gradient-white-grey-linear-5120x2880-c2-a9a9a9-ffffff-a-195-f-14.svg);">
+            <h1 class="display-4">
+                Reinforcement Learning
+            </h1>
+            <h3 class="lead">
+                <b>Dynamic Pricing For Hotel Room Booking</b>
+            </h3>
+            <hr class="my-4">
+            <div class="row" style="margin-left:90% ;">
+              <div class="col-5" style="padding-left:0px;padding-right: 15px;">
+                <button id="button2" type="button" class="btn btn-secondary"> <i class="fa fa-filter fa-2x"></i> </button>
+              </div>
+              <div class="col-5" style="padding:0px 0px;">
+                <form>
+                <input type="submit" value="&#xf080" method="get" class="btn btn btn-secondary fa fa fa-bar-chart fa-2x"  id="button5" onclick="mywait();" style="height: 46px;
+                width: 56px;" name='submit_button'>
+
+               </form>   
+              </div>  
+              </div>
+              </div>
+    </div>
+
+    <div class="container" id="item3" style="display: none; margin-top: 2%;"> 
+        <div>
+            <form> 
+                
+                <div class="row myclass1">
+                
+                <div class="col-2" style="margin-left: auto; margin-right: auto;">  
+                    <input type="number" name="startprice" placeholder="Initial Price">
+                        
+                </div>
+                <div class="col-2"> 
+                  <input type="number" name="startdemand"placeholder="Initial Demand">
+                    
+                </div>
+                <div class="col-2">
+                  <input type="number" name="pricespace"placeholder="Price Space">
+                </div>
+                <div class="col-2">
+                  <input type="number" name="priceexplore"placeholder="Price Explore">
+                </div>
+
+                        <div class="col-2">
+                                <input type="date" name="startdate" max="2019-11-13">
+                        </div>   
+                    <div class="col-2">
+                        <input type="submit" value="Begin Demo Process" method="get" class="btn btn-success" id="button31" onclick="mywait();" name='submit_button'>
+                    </div>    
+                </div>
+            
+            </form>
+        </div>
+       
+        
+    </div>
+
+    
+    <div class="container" id="item4" style="margin-top: 2%;"> 
+      <div>
+          <form> 
+            <div class="row">
+              {% if curr_date is defined %}
+              <h2 style="margin-top:1%; margin-bottom: 1%;">{{curr_date}}</h2>
+              {% endif %}
+              </div>
+              <div class="row">
+              
+              <div class="col-4" style="">  
+                {% if prices is defined %}
+                <div class="scrollable">
+                {%for price in prices%}
+                <input type="radio" name="nextprice" value={{price}} id={{price}} {% if price_t3 == price %} checked {% endif %}> <label for={{price}}> ₹ {{price}}</label>  <br>
+                {%endfor%} 
+                </div>
+                {% endif %} 
+              </div>
+              <div class="col-4"> 
+                <input type="number" name="nextdemand"placeholder="Actual Demand">
+                  
+              </div>
+              <div class="col-4">
+                <input type="submit" value="process next" method="get" class="btn btn-success" id="button4" onclick="mywait();" name="submit_button" value="Process Next">
+              </div>   
+              </div>
+          
+          </form>
+      </div>
+     
+      
+  </div>  
+
+   
+
+ 
+{% if graphurl is defined %}
+<div style="margin-top: 15%;">
+<h1 style="text-align: center;"><span style="">Comparison Visualization</span></h1>
+</div>
+<div style=""><img src = {{graphurl}} style="margin-left: auto;height: 100%;display: block; margin-right: auto;width: 100%; max-width: 100%;"></img>
+</div>
+{% endif %}
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+            $( "#button2" ).click(function() {
+    $( "#item3" ).toggle();
+});
+$( "#button31" ).click(function() {
+  $( "#item4" ).toggle();
+  // $( "#item3" ).toggle();
+});
+
+// document.getElementById("Dropdown").addEventListener('click', function (event) { 
+//             alert("click outside"); 
+//             event.stopPropagation(); 
+//         });
+      //   function preloader(){
+      //     document.getElementById("loading").style.display = "none";
+      //     document.getElementById("content").style.display = "block";
+      // }
+      // window.onload = preloader;
+      function mywait(){
+        $("#loading").show();
+            $("#content").hide();    
+      }
+    </script>
+  </div>
+</body>
+</html>

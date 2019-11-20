@@ -1,0 +1,11 @@
+IsCanceled,ArrivalDateYear,ArrivalDateMonth,ArrivalDateDayOfMonth,StaysInWeekendNights,StaysInWeekNights,Adults,Children,Babies,Meal,AssignedRoomType,Agent
+0,2015,July,1,0,2,1,0,0,HB,A,6
+0,2015,July,2,0,3,1,0,0,HB,A,1
+0,2015,July,3,0,2,2,0,0,HB,A,1
+0,2015,July,3,0,2,2,0,0,HB,A,1
+0,2015,July,3,0,2,2,0,0,HB,A,1
+0,2015,July,3,0,2,1,0,0,HB,A,1
+0,2015,July,3,0,2,1,0,0,HB,A,1
+0,2015,July,3,0,2,2,0,0,HB,A,1
+0,2015,July,3,0,2,2,0,0,HB,A,1
+0,2015,July,3,0,2,2,0,0,HB,A,1
