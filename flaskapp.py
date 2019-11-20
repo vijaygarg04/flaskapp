@@ -11,8 +11,8 @@ from datetime import timedelta
 
 app = Flask(__name__)
 
-df_req_price = pickle.load(open("../models/past_data_demand.pkl", 'rb'))
-dataset = pd.read_csv('../Dataset/dummydata1.csv')
+df_req_price = pickle.load(open("past_data_demand.pkl", 'rb'))
+dataset = pd.read_csv('dummydata1.csv')
 agents = df_req_price['Agent'].unique()
 meals =  df_req_price['Meal'].unique()
 rooms = df_req_price['AssignedRoomType'].unique()

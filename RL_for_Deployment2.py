@@ -19,11 +19,11 @@ np.set_printoptions(precision=2)
 # 3. xg_reg_dem_above0 => Predict demand based on price and other factors
 # 4. df_dem_for_reg => For past demand data
 
-xg_reg = pickle.load(open("../models/price_reg.pkl", 'rb'))
-model_xgb_class = pickle.load(open("../models/demand_classifier.pkl", 'rb'))
-xg_reg_dem_above0 = pickle.load(open("../models/xg_reg_dem_above0.pkl", 'rb'))
-df_req_price = pickle.load(open("../models/past_data_price.pkl", 'rb'))
-df_dem_for_reg = pickle.load(open("../models/past_data_demand.pkl", 'rb'))
+xg_reg = pickle.load(open("price_reg.pkl", 'rb'))
+model_xgb_class = pickle.load(open("demand_classifier.pkl", 'rb'))
+xg_reg_dem_above0 = pickle.load(open("xg_reg_dem_above0.pkl", 'rb'))
+df_req_price = pickle.load(open("past_data_price.pkl", 'rb'))
+df_dem_for_reg = pickle.load(open("past_data_demand.pkl", 'rb'))
 
 
 # #### Calculate few things for writing functions
